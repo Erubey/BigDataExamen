@@ -2,7 +2,7 @@
 def parImpar (num: Int): Boolean={if(num%2 == 0){return true}else{return false}}
 println(parImpar(14))
 //Ejercicio 2
-val lista = List(11,1,5,3)
+val lista = List(11,1,4,3)
 var x = 0
 
 for(x <- lista){
@@ -32,6 +32,20 @@ for(x <- lista3){
 
 println(sum)
 
+//version 3,2
+def afortunado(lista: List[Int]): Unit = {
+  var x = 0
+  var sum = 0
+
+  for(x <- lista){
+    sum = sum + x
+    if(x == 7) {
+      sum = sum + 7
+    }
+  }
+  println(sum)
+}
+
 //Ejercicio 4
 val x = 1
 def balancear(listaMid: List[Int]): Boolean={
@@ -54,7 +68,7 @@ def balancear (listaMid: List[Int]): Boolean={
   if (a.sum == b.sum){ return true }
   else return false
 }
-println(balanceo(listaMid))
+println(balancear(listaMid))
 
 
 //EJercicio 5
