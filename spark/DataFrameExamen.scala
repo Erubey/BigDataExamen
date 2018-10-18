@@ -6,6 +6,7 @@ val spar = SparkSession.builder().getOrCreate()
 val df = spark.read.option("header", "true").option("inferSchema","true")csv("Netflix_2011_2016.csv")
 
 //3
+df.schema.fields.foreach(x => println(x))
 df.columns
 
 //4
