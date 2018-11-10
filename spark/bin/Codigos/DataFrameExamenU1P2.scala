@@ -6,14 +6,13 @@ val spar = SparkSession.builder().getOrCreate()
 val df = spark.read.option("header", "true").option("inferSchema","true")csv("Netflix_2011_2016.csv")
 
 //3
-//df.schema.fields.foreach(x => println(x))
 df.columns
 
 //4
 df.printSchema()
 
 //5
-df.show(5)
+df.select("Date", "Open","High","Low","Close").show()
 
 //6
 df.describe().show()
@@ -22,7 +21,7 @@ df.describe().show()
 val df2 = df.withColumn("HV Ratio", df("High")/df("Volume"))
 df2.show()
 
-//8 para despues
+//8
 df.groupBy("Date").agg(max("High")).show
 
 //9 el profe dijo que era el precio de cuando se salio de la bolsa netflix

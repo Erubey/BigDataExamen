@@ -97,5 +97,3 @@ val predictionAndLabels = result.select("prediction", "label")
 val evaluator = new MulticlassClassificationEvaluator().setLabelCol("probability").setPredictionCol("prediction").setMetricName("accuracy")
 println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
 // $example off$
-
-spark.stop()
